@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Case Drop — Demo</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="balance">
+        <span class="coin">⭐</span>
+        <span id="balance">1 000</span>
+      </div>
+      <div class="demo-badge">DEMO</div>
+    </header>
+
+    <main id="screen-home" class="screen active">
+      <h1 class="title">Кейсы</h1>
+      <div id="cases-list" class="cases-list"></div>
+    </main>
+
+    <main id="screen-case" class="screen">
+      <button class="back-btn" onclick="goHome()">← Назад</button>
+      <h2 id="case-title" class="title"></h2>
+      <div class="roulette-wrap">
+        <div class="roulette-marker"></div>
+        <div id="roulette" class="roulette"></div>
+      </div>
+      <button id="spin-btn" class="spin-btn">Открыть за <span id="case-price"></span> ⭐</button>
+      <div id="drop-result" class="drop-result"></div>
+    </main>
+
+    <main id="screen-inventory" class="screen">
+      <h1 class="title">Инвентарь</h1>
+      <div id="inventory-list" class="inventory-list"></div>
+      <p class="empty" id="inv-empty">Пока пусто. Открой кейс 👆</p>
+    </main>
+
+    <main id="screen-profile" class="screen">
+      <h1 class="title">Профиль</h1>
+      <div class="profile-card">
+        <div class="avatar" id="avatar">?</div>
+        <div class="uname" id="uname">Гость</div>
+      </div>
+      <div class="stat-row"><span>Открыто кейсов</span><b id="stat-opened">0</b></div>
+      <div class="stat-row"><span>Потрачено ⭐</span><b id="stat-spent">0</b></div>
+      <div class="stat-row"><span>Выиграно предметов</span><b id="stat-won">0</b></div>
+      <button class="reset-btn" onclick="resetAll()">Сбросить прогресс</button>
+      <p class="disclaimer">
+        Это демо-приложение. Реальные подарки, звёзды и предметы не выдаются.
+      </p>
+    </main>
+
+    <nav class="bottom-nav">
+      <button data-nav="home" class="active">🎁<span>Кейсы</span></button>
+      <button data-nav="inventory">🎒<span>Инвентарь</span></button>
+      <button data-nav="profile">👤<span>Профиль</span></button>
+    </nav>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
